@@ -373,70 +373,12 @@
 <a href="https://support.claude.ai" target="_blank">support.claude.ai</a></footer>
 
 <script>
-const ALL_TZ = [
-  ["Africa/Abidjan","Abidjan (GMT)"],
-  ["Africa/Cairo","Cairo (EET)"],
-  ["Africa/Johannesburg","Johannesburg (SAST)"],
-  ["Africa/Lagos","Lagos (WAT)"],
-  ["Africa/Nairobi","Nairobi (EAT)"],
-  ["America/Anchorage","Anchorage (AKST/AKDT)"],
-  ["America/Argentina/Buenos_Aires","Buenos Aires (ART)"],
-  ["America/Bogota","Bogotá (COT)"],
-  ["America/Chicago","Chicago (CT)"],
-  ["America/Denver","Denver (MT)"],
-  ["America/Halifax","Halifax (AT)"],
-  ["America/Lima","Lima (PET)"],
-  ["America/Los_Angeles","Los Angeles (PT)"],
-  ["America/Mexico_City","Mexico City (CST/CDT)"],
-  ["America/New_York","New York (ET)"],
-  ["America/Phoenix","Phoenix (MST)"],
-  ["America/Sao_Paulo","São Paulo (BRT)"],
-  ["America/Toronto","Toronto (ET)"],
-  ["America/Vancouver","Vancouver (PT)"],
-  ["Asia/Bangkok","Bangkok (ICT)"],
-  ["Asia/Colombo","Colombo (IST)"],
-  ["Asia/Dhaka","Dhaka (BST)"],
-  ["Asia/Dubai","Dubai (GST)"],
-  ["Asia/Hong_Kong","Hong Kong (HKT)"],
-  ["Asia/Jakarta","Jakarta (WIB)"],
-  ["Asia/Karachi","Karachi (PKT)"],
-  ["Asia/Kolkata","Bangalore / Mumbai / Delhi (IST)"],
-  ["Asia/Kuala_Lumpur","Kuala Lumpur (MYT)"],
-  ["Asia/Manila","Manila / Davao (PHT)"],
-  ["Asia/Seoul","Seoul (KST)"],
-  ["Asia/Shanghai","Shanghai / Beijing (CST)"],
-  ["Asia/Singapore","Singapore (SGT)"],
-  ["Asia/Taipei","Taipei (CST)"],
-  ["Asia/Tehran","Tehran (IRST)"],
-  ["Asia/Tokyo","Tokyo (JST)"],
-  ["Atlantic/Reykjavik","Reykjavik (GMT)"],
-  ["Australia/Adelaide","Adelaide (ACST/ACDT)"],
-  ["Australia/Brisbane","Brisbane (AEST)"],
-  ["Australia/Melbourne","Melbourne (AEST/AEDT)"],
-  ["Australia/Perth","Perth (AWST)"],
-  ["Australia/Sydney","Sydney (AEST/AEDT)"],
-  ["Europe/Amsterdam","Amsterdam (CET/CEST)"],
-  ["Europe/Athens","Athens (EET/EEST)"],
-  ["Europe/Berlin","Berlin (CET/CEST)"],
-  ["Europe/Istanbul","Istanbul (TRT)"],
-  ["Europe/Lisbon","Lisbon (WET/WEST)"],
-  ["Europe/London","London (GMT/BST)"],
-  ["Europe/Madrid","Madrid (CET/CEST)"],
-  ["Europe/Moscow","Moscow (MSK)"],
-  ["Europe/Paris","Paris (CET/CEST)"],
-  ["Europe/Stockholm","Stockholm (CET/CEST)"],
-  ["Europe/Warsaw","Warsaw (CET/CEST)"],
-  ["Pacific/Auckland","Auckland (NZST/NZDT)"],
-  ["Pacific/Honolulu","Honolulu (HST)"],
-  ["Pacific/Fiji","Fiji (FJT)"],
-  ["UTC","UTC"],
-];
-
 const sel = document.getElementById("tz-select");
-ALL_TZ.forEach(([val, label]) => {
+const ALL_TZ = Intl.supportedValuesOf('timeZone');
+ALL_TZ.forEach(tz => {
   const o = document.createElement("option");
-  o.value = val;
-  o.textContent = label;
+  o.value = tz;
+  o.textContent = tz.replace(/_/g, ' ');
   sel.appendChild(o);
 });
 
@@ -447,10 +389,6 @@ function detectTZ() {
 function setSelectToTZ(tz) {
   for (let i = 0; i < sel.options.length; i++) {
     if (sel.options[i].value === tz) { sel.selectedIndex = i; return true; }
-  }
-  const parts = tz.split("/");
-  for (let i = 0; i < sel.options.length; i++) {
-    if (sel.options[i].value.includes(parts[parts.length-1])) { sel.selectedIndex = i; return true; }
   }
   return false;
 }
@@ -530,10 +468,7 @@ function update() {
 
 const detected = detectTZ();
 if (!setSelectToTZ(detected)) sel.selectedIndex = 0;
-const detectedLabel = ALL_TZ.find(([v]) => v === detected);
-document.getElementById("tz-detected").textContent = detectedLabel
-  ? `Auto-detected: ${detectedLabel[1]}`
-  : `Auto-detected: ${detected}`;
+document.getElementById("tz-detected").textContent = `Auto-detected: ${detected.replace(/_/g, ' ')}`;
 
 update();
 setInterval(update, 5000);
