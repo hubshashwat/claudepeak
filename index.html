@@ -21,9 +21,7 @@
     --offpeak-border: #a8dbb8;
     --accent: #c94f2e;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--bg);
@@ -34,7 +32,6 @@
     align-items: center;
     padding: 48px 20px 80px;
   }
-
   .eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -43,7 +40,6 @@
     color: var(--muted);
     margin-bottom: 12px;
   }
-
   h1 {
     font-size: clamp(28px, 5vw, 44px);
     font-weight: 300;
@@ -54,13 +50,7 @@
     margin-bottom: 10px;
     max-width: 560px;
   }
-
-  h1 em {
-    font-style: normal;
-    font-weight: 500;
-    color: var(--accent);
-  }
-
+  h1 em { font-style: normal; font-weight: 500; color: var(--accent); }
   .subtitle {
     font-size: 15px;
     color: var(--muted);
@@ -69,7 +59,6 @@
     max-width: 420px;
     line-height: 1.6;
   }
-
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -79,51 +68,6 @@
     max-width: 520px;
     margin-bottom: 20px;
   }
-
-  .select-wrap {
-    position: relative;
-    margin-bottom: 8px;
-  }
-
-  .select-wrap select {
-    width: 100%;
-    appearance: none;
-    background: var(--bg);
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 44px 14px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--text);
-    cursor: pointer;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .select-wrap select:focus { border-color: var(--accent); }
-
-  .select-arrow {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: var(--muted);
-    font-size: 12px;
-  }
-
-  .hint {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 24px;
-  }
-
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 24px 0;
-  }
-
   .result-label {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
@@ -132,50 +76,18 @@
     color: var(--muted);
     margin-bottom: 6px;
   }
-
-  .peak-block, .offpeak-block {
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-  }
-
-  .peak-block {
-    background: var(--peak-bg);
-    border: 1px solid var(--peak-border);
-  }
-
-  .offpeak-block {
-    background: var(--offpeak-bg);
-    border: 1px solid var(--offpeak-border);
-  }
-
-  .block-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
+  .hint { font-size: 12px; color: var(--muted); margin-bottom: 24px; margin-top: 6px; }
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
+  .peak-block, .offpeak-block { border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+  .peak-block { background: var(--peak-bg); border: 1px solid var(--peak-border); }
+  .offpeak-block { background: var(--offpeak-bg); border: 1px solid var(--offpeak-border); }
+  .block-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .dot-peak { background: var(--peak); }
   .dot-offpeak { background: var(--offpeak); }
-
-  .block-title {
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
+  .block-title { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
   .block-title.peak { color: var(--peak); }
   .block-title.offpeak { color: var(--offpeak); }
-
   .block-time {
     font-family: 'DM Mono', monospace;
     font-size: 22px;
@@ -184,12 +96,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 2px;
   }
-
-  .block-sub {
-    font-size: 12px;
-    color: var(--muted);
-  }
-
+  .block-sub { font-size: 12px; color: var(--muted); }
   .now-status {
     display: flex;
     align-items: center;
@@ -199,18 +106,8 @@
     border: 1px solid var(--border);
     background: var(--bg);
   }
-
-  .now-label {
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  .now-value {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-  }
-
+  .now-label { font-size: 13px; color: var(--muted); }
+  .now-value { font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500; margin-top: 2px; }
   .badge {
     display: inline-flex;
     align-items: center;
@@ -219,16 +116,12 @@
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
+    white-space: nowrap;
   }
-
   .badge.peak { background: var(--peak-bg); color: var(--peak); border: 1px solid var(--peak-border); }
   .badge.offpeak { background: var(--offpeak-bg); color: var(--offpeak); border: 1px solid var(--offpeak-border); }
   .badge.weekend { background: #f0edf9; color: #6a4db5; border: 1px solid #cfc4f0; }
-
-  .timeline-wrap {
-    margin-top: 16px;
-  }
-
+  .timeline-wrap { margin-top: 16px; }
   .tl-track {
     position: relative;
     height: 8px;
@@ -238,7 +131,6 @@
     overflow: visible;
     margin-bottom: 6px;
   }
-
   .tl-peak-fill {
     position: absolute;
     top: -1px;
@@ -249,7 +141,6 @@
     left: 33.33%;
     width: 25%;
   }
-
   .tl-needle {
     position: absolute;
     top: -4px;
@@ -260,18 +151,8 @@
     transform: translateX(-50%);
     transition: left 1s linear;
   }
-
-  .tl-labels {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .tl-lbl {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-  }
-
+  .tl-labels { display: flex; justify-content: space-between; }
+  .tl-lbl { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); }
   .promo-pill {
     display: inline-flex;
     align-items: center;
@@ -284,17 +165,64 @@
     color: #8a6a10;
     margin-bottom: 32px;
   }
-
-  .promo-icon { font-size: 14px; }
-
-  footer {
-    font-size: 12px;
-    color: var(--muted);
-    text-align: center;
-    margin-top: 12px;
-  }
-
+  footer { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
   footer a { color: var(--muted); }
+
+  /* Searchable combobox */
+  .tz-combo { position: relative; margin-bottom: 4px; }
+  .tz-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 40px 13px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .tz-input:focus { border-color: var(--accent); }
+  .tz-input::placeholder { color: var(--muted); }
+  .tz-clear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+    display: none;
+  }
+  .tz-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0; right: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-height: 210px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .tz-dropdown.open { display: block; }
+  .tz-option {
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--text);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .tz-option:last-child { border-bottom: none; }
+  .tz-option:hover, .tz-option.highlighted { background: var(--bg); }
+  .tz-option mark { background: #fff3b0; color: var(--text); border-radius: 2px; padding: 0 1px; font-style: normal; }
+  .tz-empty { padding: 14px 16px; font-size: 13px; color: var(--muted); text-align: center; }
 
   @media (max-width: 480px) {
     .card { padding: 24px 20px; }
@@ -306,20 +234,21 @@
 
 <p class="eyebrow">Anthropic · March 2026 Promotion</p>
 <h1>When are Claude's <em>peak hours</em> for you?</h1>
-<p class="subtitle">Pick your timezone to see exactly when limits double — and when they don't.</p>
+<p class="subtitle">Search your timezone to see exactly when limits double — and when they don't.</p>
 
 <div class="promo-pill">
-  <span class="promo-icon">🎁</span>
+  <span>🎁</span>
   Off-peak = 2× usage limits &nbsp;·&nbsp; Mar 13–27, 2026
 </div>
 
 <div class="card">
   <p class="result-label">Your timezone</p>
-  <div class="select-wrap">
-    <select id="tz-select" onchange="update()"></select>
-    <span class="select-arrow">▼</span>
+  <div class="tz-combo">
+    <input type="text" class="tz-input" id="tz-input" placeholder="Search… Calcutta, London, New York, Tokyo" autocomplete="off" spellcheck="false">
+    <button class="tz-clear" id="tz-clear" tabindex="-1">×</button>
+    <div class="tz-dropdown" id="tz-dropdown"></div>
   </div>
-  <p class="hint" id="tz-detected">Detecting your timezone…</p>
+  <p class="hint" id="tz-hint">Detecting your timezone…</p>
 
   <div class="divider"></div>
 
@@ -348,8 +277,8 @@
   <p class="result-label">Right now</p>
   <div class="now-status">
     <div>
-      <div class="now-label">Current local time</div>
-      <div class="now-value" id="now-time">—</div>
+      <div class="now-label">Next change</div>
+      <div class="now-value" id="now-countdown">—</div>
     </div>
     <div id="now-badge" class="badge offpeak">Checking…</div>
   </div>
@@ -373,55 +302,116 @@
 <a href="https://support.claude.ai" target="_blank">support.claude.ai</a></footer>
 
 <script>
-const sel = document.getElementById("tz-select");
 const ALL_TZ = Intl.supportedValuesOf('timeZone');
-ALL_TZ.forEach(tz => {
-  const o = document.createElement("option");
-  o.value = tz;
-  o.textContent = tz.replace(/_/g, ' ');
-  sel.appendChild(o);
+let selectedTZ = null;
+let highlightedIndex = -1;
+let filteredList = [];
+
+const input = document.getElementById('tz-input');
+const dropdown = document.getElementById('tz-dropdown');
+const clearBtn = document.getElementById('tz-clear');
+
+function tzLabel(tz) { return tz.replace(/_/g, ' '); }
+
+function highlightMatch(text, query) {
+  if (!query) return text;
+  const idx = text.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return text;
+  return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + query.length) + '</mark>' + text.slice(idx + query.length);
+}
+
+function renderDropdown(query) {
+  const q = (query || '').trim().toLowerCase();
+  filteredList = q
+    ? ALL_TZ.filter(tz => tzLabel(tz).toLowerCase().includes(q))
+    : ALL_TZ.slice(0, 80);
+  highlightedIndex = filteredList.length > 0 ? 0 : -1;
+
+  if (filteredList.length === 0) {
+    dropdown.innerHTML = '<div class="tz-empty">No timezones found</div>';
+  } else {
+    dropdown.innerHTML = filteredList.map((tz, i) =>
+      `<div class="tz-option${i === 0 ? ' highlighted' : ''}" data-i="${i}">${highlightMatch(tzLabel(tz), q ? query.trim() : '')}</div>`
+    ).join('');
+    dropdown.querySelectorAll('.tz-option').forEach(el => {
+      el.addEventListener('mousedown', e => {
+        e.preventDefault();
+        selectTZ(filteredList[+el.dataset.i]);
+      });
+    });
+  }
+  dropdown.classList.add('open');
+}
+
+function selectTZ(tz) {
+  selectedTZ = tz;
+  input.value = tzLabel(tz);
+  clearBtn.style.display = 'block';
+  dropdown.classList.remove('open');
+  document.getElementById('tz-hint').textContent = tz;
+  update();
+}
+
+function closeDropdown() {
+  dropdown.classList.remove('open');
+  if (selectedTZ) input.value = tzLabel(selectedTZ);
+}
+
+input.addEventListener('input', () => {
+  clearBtn.style.display = input.value ? 'block' : 'none';
+  renderDropdown(input.value);
+});
+input.addEventListener('focus', () => renderDropdown(input.value));
+input.addEventListener('blur', () => setTimeout(closeDropdown, 150));
+input.addEventListener('keydown', e => {
+  if (!dropdown.classList.contains('open')) return;
+  const opts = dropdown.querySelectorAll('.tz-option');
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    highlightedIndex = Math.min(highlightedIndex + 1, filteredList.length - 1);
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    highlightedIndex = Math.max(highlightedIndex - 1, 0);
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (highlightedIndex >= 0) selectTZ(filteredList[highlightedIndex]);
+    return;
+  } else if (e.key === 'Escape') {
+    closeDropdown(); return;
+  }
+  opts.forEach((o, i) => o.classList.toggle('highlighted', i === highlightedIndex));
+  if (opts[highlightedIndex]) opts[highlightedIndex].scrollIntoView({ block: 'nearest' });
+});
+clearBtn.addEventListener('click', () => {
+  input.value = '';
+  selectedTZ = null;
+  clearBtn.style.display = 'none';
+  input.focus();
 });
 
-function detectTZ() {
-  try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) { return "UTC"; }
-}
-
-function setSelectToTZ(tz) {
-  for (let i = 0; i < sel.options.length; i++) {
-    if (sel.options[i].value === tz) { sel.selectedIndex = i; return true; }
-  }
-  return false;
-}
-
+// Core logic
 function localTimeStr(date, tz, opts) {
   return date.toLocaleString("en-US", { timeZone: tz, ...opts });
 }
-
-function convertETtoLocal(etHour, etMin, tz) {
-  const now = new Date();
-  const etStr = localTimeStr(now, "America/New_York", { year:"numeric", month:"2-digit", day:"2-digit" });
-  const [m, d, y] = etStr.split("/");
-  const etDate = new Date(`${y}-${m}-${d}T${String(etHour).padStart(2,"0")}:${String(etMin).padStart(2,"0")}:00`);
-  const etOffset = getOffset("America/New_York", etDate);
-  const localOffset = getOffset(tz, etDate);
-  const diffMs = (localOffset - etOffset) * 60000;
-  const localDate = new Date(etDate.getTime() + diffMs);
-  return localDate;
-}
-
 function getOffset(tz, date) {
   const utc = date.getTime();
   const local = new Date(date.toLocaleString("en-US", { timeZone: tz })).getTime();
   return Math.round((local - utc) / 60000);
 }
-
+function convertETtoLocal(etHour, etMin, tz) {
+  const now = new Date();
+  const etStr = localTimeStr(now, "America/New_York", { year:"numeric", month:"2-digit", day:"2-digit" });
+  const [m, d, y] = etStr.split("/");
+  const etDate = new Date(`${y}-${m}-${d}T${String(etHour).padStart(2,"0")}:${String(etMin).padStart(2,"0")}:00`);
+  const diff = (getOffset(tz, etDate) - getOffset("America/New_York", etDate)) * 60000;
+  return new Date(etDate.getTime() + diff);
+}
 function fmt12(date) {
   let h = date.getHours(), m = date.getMinutes();
   const ampm = h >= 12 ? "PM" : "AM";
   h = h % 12 || 12;
   return `${h}:${String(m).padStart(2,"0")} ${ampm}`;
 }
-
 function getETState() {
   const now = new Date();
   const day = localTimeStr(now, "America/New_York", { weekday:"short" });
@@ -429,48 +419,54 @@ function getETState() {
   const m = parseInt(localTimeStr(now, "America/New_York", { minute:"2-digit" }));
   const isWeekend = day === "Sat" || day === "Sun";
   const isPeak = !isWeekend && h >= 8 && h < 14;
-  const etDecimal = h + m / 60;
-  return { isPeak, isWeekend, etDecimal };
+  return { isPeak, isWeekend, etH: h, etM: m, etDecimal: h + m / 60 };
+}
+function getCountdown(isPeak, isWeekend, etH, etM) {
+  const nowMins = etH * 60 + etM;
+  if (isWeekend) return "Next weekday 8 AM ET";
+  if (isPeak) {
+    const diff = 14 * 60 - nowMins;
+    return `Peak ends in ${Math.floor(diff/60)}h ${diff%60}m`;
+  }
+  if (nowMins < 8 * 60) {
+    const diff = 8 * 60 - nowMins;
+    return `Peak starts in ${Math.floor(diff/60)}h ${diff%60}m`;
+  }
+  const remaining = (24 * 60 - nowMins) + 8 * 60;
+  return `Peak starts in ${Math.floor(remaining/60)}h ${remaining%60}m`;
 }
 
 function update() {
-  const tz = sel.value;
-  const now = new Date();
-
-  const peakStart = convertETtoLocal(8, 0, tz);
-  const peakEnd = convertETtoLocal(14, 0, tz);
+  if (!selectedTZ) return;
+  const peakStart = convertETtoLocal(8, 0, selectedTZ);
+  const peakEnd = convertETtoLocal(14, 0, selectedTZ);
   document.getElementById("peak-time").textContent = `${fmt12(peakStart)} – ${fmt12(peakEnd)}`;
-
-  const lines = [];
-  const endStr = fmt12(peakEnd), startStr = fmt12(peakStart);
-  lines.push(`${endStr} – ${startStr}`);
-  document.getElementById("offpeak-time").textContent = lines[0];
-
-  const localNow = localTimeStr(now, tz, { hour:"2-digit", minute:"2-digit", second:"2-digit", hour12:true });
-  document.getElementById("now-time").textContent = localNow;
-
-  const { isPeak, isWeekend, etDecimal } = getETState();
+  document.getElementById("offpeak-time").textContent = `${fmt12(peakEnd)} – ${fmt12(peakStart)}`;
+  const { isPeak, isWeekend, etH, etM, etDecimal } = getETState();
   const badge = document.getElementById("now-badge");
+  const dot = c => `<span style="width:6px;height:6px;border-radius:50%;background:${c};display:inline-block;flex-shrink:0"></span>`;
   if (isWeekend) {
     badge.className = "badge weekend";
-    badge.textContent = "Weekend — 2× active";
+    badge.innerHTML = dot('#8b5cf6') + ' Weekend — 2×';
   } else if (isPeak) {
     badge.className = "badge peak";
-    badge.innerHTML = `<span style="width:6px;height:6px;border-radius:50%;background:var(--peak);display:inline-block"></span> Peak`;
+    badge.innerHTML = dot('var(--peak)') + ' Peak now';
   } else {
     badge.className = "badge offpeak";
-    badge.innerHTML = `<span style="width:6px;height:6px;border-radius:50%;background:var(--offpeak);display:inline-block"></span> Off-peak — 2×`;
+    badge.innerHTML = dot('var(--offpeak)') + ' Off-peak — 2×';
   }
-
-  const pct = (etDecimal / 24) * 100;
-  document.getElementById("tl-needle").style.left = pct + "%";
+  document.getElementById("now-countdown").textContent = getCountdown(isPeak, isWeekend, etH, etM);
+  document.getElementById("tl-needle").style.left = (etDecimal / 24 * 100) + "%";
 }
 
-const detected = detectTZ();
-if (!setSelectToTZ(detected)) sel.selectedIndex = 0;
-document.getElementById("tz-detected").textContent = `Auto-detected: ${detected.replace(/_/g, ' ')}`;
-
-update();
+// Init
+const detected = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) { return "UTC"; } })();
+if (ALL_TZ.includes(detected)) {
+  selectTZ(detected);
+  document.getElementById('tz-hint').textContent = `Auto-detected: ${tzLabel(detected)}`;
+} else {
+  document.getElementById('tz-hint').textContent = 'Type your city or region above';
+}
 setInterval(update, 5000);
 </script>
 </body>
